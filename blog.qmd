@@ -1,0 +1,10 @@
+---
+title: "Blogs"
+listing: 
+  contents: posts 
+  type: default 
+  sort: "date desc" 
+  feed: true
+  categories: true
+page-layout: full
+—-
