@@ -1,6 +1,6 @@
 ---
 # title: Pranjal Chatterjee
-image: ris.jpg
+image: pranjal.jpg
 about:
   template: trestles
   image-width: 18em
