@@ -6,5 +6,5 @@ listing:
   sort: "date desc" 
   feed: true
   categories: true
-page-layout: full
+page-layout: full
 ---
