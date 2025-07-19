@@ -8,20 +8,16 @@ about:
   links:
     - icon: fab fa-linkedin-in
       text: LinkedIn
-      href: https://linkedin.com/in/rishabh84
+      href: https://www.linkedin.com/in/pranjalchatterjee/
     - icon: github
       text: GitHub
-      href: https://github.com/rishabh-mondal
+      href: https://github.com/pranjalchatterjee1
     - icon: Gmail
       text: Gmail
-      href: rishabh.mondal@iitgn.ac.in
+      href: chatpranjal@gmail.com
     - icon: twitter
       text: Twitter
-      href: https://twitter.com/RishabhMon92409
-    - icon: google-scholar
-      text: Google Scholar
-      href: https://scholar.google.com/citations?user=oGYVSX0AAAAJ&hl=en&oi=ao
-     
+      href: https://twitter.com/PranjalChatter1
 ---
 
 :::{#hero-heading}
