@@ -35,7 +35,7 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
   [Indian Institute of Engineering Science and Technology (IIEST), Shibpur](https://www.iiests.ac.in/)  |  *Aug 2022 - June 2024*
 
 - **B.Tech in Computer Science and Engineering**
-  [Maulana Abul Kalam Azad University of Technology (India)]((https://www.makautexam.net/)) | *Sept 2018 - June 2022*
+  [Maulana Abul Kalam Azad University of Technology (India)](https://www.makautexam.net/) | *Sept 2018 - June 2022*
   
 ## Work Experience
 **Junior Research Fellow @ IIT Kharagpur (_July 2025 - Present_)**
