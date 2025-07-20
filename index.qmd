@@ -11,7 +11,7 @@ about:
       href: https://www.linkedin.com/in/pranjalchatterjee/
     - icon: github
       text: GitHub
-      href: https://github.com/pranjalchatterjee1
+      href: https://github.com/pranjal-chatterjee
     - icon: Gmail
       text: Gmail
       href: chatpranjal@gmail.com
@@ -40,9 +40,13 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
 
 <strong style="color:#228B22">Junior Research Fellow @ IIT Kharagpur</strong>  
 <span style="font-style:italic; color:#888">July 2025 - Present</span>  
-- Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company's gaming platform.
+- Working on mm-Wave Sensing, HCI, FMCW radar.
 
-<strong style="color:#228B22">Jr. Game Developer @ Arrise Solutions(India) Pvt. Ltd.</strong>  
+<strong style="color:#228B22">
+  <a href="https://arrise.com/offices/?bid=3754" target="_blank" style="color:#228B22; text-decoration:none;">
+    Jr. Game Developer @ Arrise Solutions(India) Pvt. Ltd.
+  </a>
+</strong>
 <span style="font-style:italic; color:#888">July 2024 - June 2025</span>  
 - Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company's gaming platform.
 
