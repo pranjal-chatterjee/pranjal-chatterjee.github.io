@@ -30,11 +30,14 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
 
 - <strong style="color:#2a52be">M.Tech in Information Technology</strong>  
   <a href="https://www.iiests.ac.in/" style="color:#444">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a>  
-  <span style="font-style:italic; color:#888">Aug 2022 - June 2024</span>
+  <span style="font-style:italic; color:#888">Aug 2022 - June 2024</span><br>
+  <span style="color:#444">CGPA: <strong>9.43/10</strong> &nbsp;|&nbsp; <em style="color:#228B22">Silver Medalist</em></span>
 
 - <strong style="color:#2a52be">B.Tech in Computer Science and Engineering</strong>  
   <a href="https://www.makautexam.net/" style="color:#444">Maulana Abul Kalam Azad University of Technology (India)</a>  
-  <span style="font-style:italic; color:#888">Sept 2018 - June 2022</span>
+  <span style="font-style:italic; color:#888">Sept 2018 - June 2022</span><br>
+  <span style="color:#444">CGPA: <strong>9.46/10</strong></span>
+
 
 ## Work Experience
 
