@@ -12,9 +12,9 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/pranjal-chatterjee
-    - icon: Gmail
-      text: Gmail
-      href: chatpranjal@gmail.com
+    - icon: fas fa-envelope
+      text: Email
+      href: mailto:chatpranjal@gmail.com
     - icon: twitter
       text: Twitter
       href: https://twitter.com/PranjalChatter1
