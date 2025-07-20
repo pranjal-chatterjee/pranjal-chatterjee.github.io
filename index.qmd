@@ -13,7 +13,7 @@ about:
       text: GitHub
       href: https://github.com/pranjal-chatterjee
     - icon: fas fa-envelope
-      text: Email
+      text: Gmail
       href: mailto:chatpranjal@gmail.com
     - icon: twitter
       text: Twitter
