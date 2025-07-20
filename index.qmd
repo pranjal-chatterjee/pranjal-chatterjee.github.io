@@ -40,7 +40,9 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
 
 <!-- Junior Research Fellow @ IIT Kharagpur -->
 <strong style="color:#228B22">
-  Junior Research Fellow @ IIT Kharagpur
+  <a href="https://www.iitkgp.ac.in" target="_blank" style="color:#228B22; text-decoration:none;">
+    Junior Research Fellow @ IIT Kharagpur
+  </a>
 </strong>  
 <span style="font-style:italic; color:#888">July 2025 - Present</span>  
 - Working on mm-Wave Sensing, HCI, FMCW radar.
