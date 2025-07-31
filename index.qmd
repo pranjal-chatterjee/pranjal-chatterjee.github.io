@@ -64,6 +64,5 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
 ## Research Interests
 - mm-Wave Sensing
 - Ubiquitous computing
-- FMCW radars
 - Human-computer interaction(HCI)
 - Machine Learning
