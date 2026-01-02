@@ -22,11 +22,15 @@ about:
 
 :::{#hero-heading}
 # **Panjal Chatterjee**
-Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
+Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
 :::
 ---
 
 ## Education
+
+- <strong style="color:#2a52be">PhD in Computer SCience & Engineering</strong>  
+  <a href="https://www.iiests.ac.in/" style="color:#444">Indian Institute of Technology, Kharagpur</a>  
+  <span style="font-style:italic; color:#888">Jan 2026 - Present</span><br>
 
 - <strong style="color:#2a52be">M.Tech in Information Technology</strong>  
   <a href="https://www.iiests.ac.in/" style="color:#444">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a>  
@@ -48,8 +52,8 @@ Hello, I'm Pranjal, currently a Junior Research Fellow in Computer Science and E
     Junior Research Fellow @ IIT Kharagpur
   </a>
 </strong>  
-<span style="font-style:italic; color:#888">July 2025 - Present</span>  
-- Working on mm-Wave Sensing, HCI, FMCW radar.
+<span style="font-style:italic; color:#888">July 2025 - Dec 2026</span>  
+- Worked on a DST funded project called "mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing".
 
 <!-- Jr. Game Developer @ Arrise Solutions -->
 <strong style="color:#228B22">
