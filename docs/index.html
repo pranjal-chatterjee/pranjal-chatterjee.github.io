@@ -128,6 +128,142 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
   <div class="about-contents"><main class="content" id="quarto-document-content">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f7f4ee;
+  --text: #1e1e1e;
+  --muted: #4a4a4a;
+  --muted-2: #767676;
+  --link: #1b45c7;
+  --link-hover: #1238a5;
+  --accent-blue: #2a52be;
+  --accent-green: #2f8f4a;
+  --accent-red: #a01822;
+  --toggle-bg: #e5e0d6;
+  --toggle-border: #c9c4b7;
+  --toggle-knob: #ffffff;
+  --toggle-shadow: rgba(0, 0, 0, 0.2);
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111418;
+  --text: #f0f0f0;
+  --muted: #c0c0c0;
+  --muted-2: #9a9a9a;
+  --link: #8cb4ff;
+  --link-hover: #b3cdff;
+  --accent-blue: #9db7ff;
+  --accent-green: #7fd49a;
+  --accent-red: #ff8f99;
+  --toggle-bg: #2a2f36;
+  --toggle-border: #3a414b;
+  --toggle-knob: #f0f0f0;
+  --toggle-shadow: rgba(0, 0, 0, 0.4);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+a {
+  color: var(--link);
+}
+a:hover {
+  color: var(--link-hover);
+}
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--toggle-border);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.85rem;
+  box-shadow: 0 10px 24px var(--toggle-shadow);
+  z-index: 999;
+}
+.theme-toggle__label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.theme-toggle__switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.theme-toggle__switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.theme-toggle__track {
+  width: 46px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle__knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--toggle-knob);
+  box-shadow: 0 2px 6px var(--toggle-shadow);
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+#theme-toggle:checked + .theme-toggle__track .theme-toggle__knob {
+  transform: translateX(22px);
+}
+@media (max-width: 640px) {
+  .theme-toggle {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+</style>
+<div class="theme-toggle" aria-label="Theme toggle">
+  <span class="theme-toggle__label">Light</span>
+  <label class="theme-toggle__switch" for="theme-toggle">
+    <input id="theme-toggle" type="checkbox" aria-label="Toggle dark mode">
+    <span class="theme-toggle__track">
+      <span class="theme-toggle__knob"></span>
+    </span>
+  </label>
+  <span class="theme-toggle__label">Dark</span>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById("theme-toggle");
+  if (!toggle) {
+    return;
+  }
+  var stored = localStorage.getItem("theme");
+  var prefersDark = window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var isDark = stored ? stored === "dark" : prefersDark;
+  root.dataset.theme = isDark ? "dark" : "light";
+  toggle.checked = isDark;
+  toggle.addEventListener("change", function () {
+    var nextTheme = toggle.checked ? "dark" : "light";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem("theme", nextTheme);
+  });
+})();
+</script>
 <div id="hero-heading">
 <section id="panjal-chatterjee" class="level1">
 <p>Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the <a href="https://ubinet-iitkgp.github.io/ubinet/"><strong>Ubiquitous Networked Systems Lab (UbiNet)</strong></a>, IIT Kharagpur, West Bengal, under the guidance of <a href="https://sandipc-iitkgp.github.io/sandip-web/"><strong>Prof.&nbsp;Sandip Chakraborty</strong></a>. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.</p>
@@ -137,26 +273,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="education" class="level2">
 <h2 data-anchor-id="education">Education</h2>
 <ul>
-<li><p><strong style="color:#2a52be">PhD in Computer SCience &amp; Engineering</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:#444">Indian Institute of Technology, Kharagpur</a><br>
-<span style="font-style:italic; color:#888">Jan 2026 - Present</span><br></p></li>
-<li><p><strong style="color:#2a52be">M.Tech in Information Technology</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:#444">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a><br>
-<span style="font-style:italic; color:#888">Aug 2022 - June 2024</span><br> <span style="color:#444">CGPA: <strong>9.43</strong> &nbsp;|&nbsp; <em style="color:#8B0000">Silver Medalist</em></span></p></li>
-<li><p><strong style="color:#2a52be">B.Tech in Computer Science and Engineering</strong><br>
-<a href="https://www.makautexam.net/" style="color:#444">Maulana Abul Kalam Azad University of Technology (India)</a><br>
-<span style="font-style:italic; color:#888">Sept 2018 - June 2022</span><br> <span style="color:#444">CGPA: <strong>9.46</strong></span></p></li>
+<li><p><strong style="color:var(--accent-blue)">PhD in Computer SCience &amp; Engineering</strong><br>
+<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Technology, Kharagpur</a><br>
+<span style="font-style:italic; color:var(--muted-2)">Jan 2026 - Present</span><br></p></li>
+<li><p><strong style="color:var(--accent-blue)">M.Tech in Information Technology</strong><br>
+<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a><br>
+<span style="font-style:italic; color:var(--muted-2)">Aug 2022 - June 2024</span><br> <span style="color:var(--muted)">CGPA: <strong>9.43</strong> &nbsp;|&nbsp; <em style="color:var(--accent-red)">Silver Medalist</em></span></p></li>
+<li><p><strong style="color:var(--accent-blue)">B.Tech in Computer Science and Engineering</strong><br>
+<a href="https://www.makautexam.net/" style="color:var(--muted)">Maulana Abul Kalam Azad University of Technology (India)</a><br>
+<span style="font-style:italic; color:var(--muted-2)">Sept 2018 - June 2022</span><br> <span style="color:var(--muted)">CGPA: <strong>9.46</strong></span></p></li>
 </ul>
 </section>
 <section id="work-experience" class="level2">
 <h2 data-anchor-id="work-experience">Work Experience</h2>
 <!-- Junior Research Fellow @ IIT Kharagpur -->
-<p><strong style="color:#228B22"> <a href="https://www.iitkgp.ac.in" target="_blank" style="color:#228B22; text-decoration:none;"> Junior Research Fellow @ IIT Kharagpur </a> </strong><br>
-<span style="font-style:italic; color:#888">July 2025 - Dec 2026</span><br>
+<p><strong style="color:var(--accent-green)"> <a href="https://www.iitkgp.ac.in" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Junior Research Fellow @ IIT Kharagpur </a> </strong><br>
+<span style="font-style:italic; color:var(--muted-2)">July 2025 - Dec 2026</span><br>
 - Worked on a DST funded project called “mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing”.</p>
 <!-- Jr. Game Developer @ Arrise Solutions -->
-<p><strong style="color:#228B22"> <a href="https://www.arrisesolutions.com" target="_blank" style="color:#228B22; text-decoration:none;"> Jr.&nbsp;Game Developer @ Arrise Solutions(India) Pvt. Ltd. </a> </strong><br>
-<span style="font-style:italic; color:#888">July 2024 - June 2025</span><br>
+<p><strong style="color:var(--accent-green)"> <a href="https://www.arrisesolutions.com" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Jr.&nbsp;Game Developer @ Arrise Solutions(India) Pvt. Ltd. </a> </strong><br>
+<span style="font-style:italic; color:var(--muted-2)">July 2024 - June 2025</span><br>
 - Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company’s gaming platform.</p>
 </section>
 <section id="research-interests" class="level2">
