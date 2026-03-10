@@ -22,7 +22,7 @@ about:
 
 :::{#hero-heading}
 # **Pranjal Chatterjee**
-Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
+Hello, I'm Pranjal, currently a PhD Scholar in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
 :::
 ---
 
