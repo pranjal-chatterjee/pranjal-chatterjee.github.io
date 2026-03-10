@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog.html",
-    "items": []
+    "items": [
+      "/posts/imu-basics/2026-03-10-my-first-post.html"
+    ]
   }
 ]

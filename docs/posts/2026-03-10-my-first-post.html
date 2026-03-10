@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Pranjal Chatterjee">
+<meta name="dcterms.date" content="2026-03-10">
+<meta name="description" content="An introduction to IMU sensors, how they work, and how to collect and process their data.">
 
-<title>Pranjal Chatterjee</title>
+<title>IMU Sensors: Data Collection and Processing – Pranjal Chatterjee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +26,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-991b1886d3c685c7aa2b62b80640c7af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-991b1886d3c685c7aa2b62b80640c7af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,7 +56,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="../assets/theme.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -62,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Pranjal Chatterjee</span>
     </a>
   </div>
@@ -72,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -92,76 +96,117 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="pranjal.jpg" class="about-image
-  rectangle " style="width: 18em;">
-<header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"><strong>Pranjal Chatterjee</strong></h1></header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/pranjalchatterjee/" class="about-link" rel="" target="">
-    <i class="bi bi-fab fa-linkedin-in"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/pranjal-chatterjee" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="mailto:chatpranjal@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-fas fa-envelope"></i>
-     <span class="about-link-text">Gmail</span>
-  </a>
-  <a href="https://twitter.com/PranjalChatter1" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IMU Sensors: Data Collection and Processing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Basics</div>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<div id="hero-heading">
-<section id="pranjal-chatterjee" class="level1">
-<p>Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the <a href="https://ubinet-iitkgp.github.io/ubinet/"><strong>Ubiquitous Networked Systems Lab (UbiNet)</strong></a>, IIT Kharagpur, West Bengal, under the guidance of <a href="https://sandipc-iitkgp.github.io/sandip-web/"><strong>Prof.&nbsp;Sandip Chakraborty</strong></a>. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.</p>
-</section>
+  </div>
+
+<div>
+  <div class="description">
+    An introduction to IMU sensors, how they work, and how to collect and process their data.
+  </div>
 </div>
-<hr>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pranjal Chatterjee </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>IMU sensors are widely used in robotics, wearables, smartphones, drones, and many embedded systems to measure motion and orientation. IMU stands for <strong>Inertial Measurement Unit</strong>, and it typically combines multiple sensors such as an accelerometer and a gyroscope, and sometimes a magnetometer.</p>
+<p>In this post, I will cover the basic idea of IMU sensors, what kind of data they produce, and how that data can be collected and processed for practical use.</p>
+<section id="what-is-an-imu-sensor" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-imu-sensor">What is an IMU sensor</h2>
+<p>An IMU is a sensor module that measures the motion of an object in space. Depending on the sensor, it may provide:</p>
 <ul>
-<li><p><strong style="color:var(--accent-blue)">PhD in Computer Science &amp; Engineering</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Technology, Kharagpur</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Jan 2026 - Present</span><br></p></li>
-<li><p><strong style="color:var(--accent-blue)">M.Tech in Information Technology</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Aug 2022 - June 2024</span><br> <span style="color:var(--muted)">CGPA: <strong>9.43</strong> &nbsp;|&nbsp; <em style="color:var(--accent-red)">Silver Medalist</em></span></p></li>
-<li><p><strong style="color:var(--accent-blue)">B.Tech in Computer Science and Engineering</strong><br>
-<a href="https://www.makautexam.net/" style="color:var(--muted)">Maulana Abul Kalam Azad University of Technology (India)</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Sept 2018 - June 2022</span><br> <span style="color:var(--muted)">CGPA: <strong>9.46</strong></span></p></li>
+<li><strong>Acceleration</strong> along the x, y, and z axes</li>
+<li><strong>Angular velocity</strong> around the x, y, and z axes</li>
+<li><strong>Magnetic field</strong> values along the x, y, and z axes</li>
+</ul>
+<p>Based on the number of sensing components, IMUs are often described as:</p>
+<ul>
+<li><strong>6 axis IMU</strong>(MPU-6050): accelerometer + gyroscope</li>
+<li><strong>9 axis IMU</strong>(MPU-9250): accelerometer + gyroscope + magnetometer</li>
+</ul>
+<p>These measurements help estimate movement, tilt, rotation, and orientation.</p>
+</section>
+<section id="main-components-of-an-imu" class="level2">
+<h2 class="anchored" data-anchor-id="main-components-of-an-imu">Main components of an IMU</h2>
+<section id="accelerometer" class="level3">
+<h3 class="anchored" data-anchor-id="accelerometer">Accelerometer</h3>
+<p>The accelerometer measures linear acceleration along three axes. It detects both motion based acceleration and gravity. Because of this, it can also be used to estimate tilt when the sensor is stationary.</p>
+<p>Example outputs:</p>
+<ul>
+<li>acceleration in x direction</li>
+<li>acceleration in y direction</li>
+<li>acceleration in z direction</li>
 </ul>
 </section>
-<section id="work-experience" class="level2">
-<h2 data-anchor-id="work-experience">Work Experience</h2>
-<p><strong style="color:var(--accent-green)"> <a href="https://www.iitkgp.ac.in" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Junior Research Fellow @ IIT Kharagpur </a> </strong><br>
-<span style="font-style:italic; color:var(--muted-2)">July 2025 - Dec 2026</span><br>
-- Worked on a DST funded project called “mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing”.</p>
-<p><strong style="color:var(--accent-green)"> <a href="https://www.arrisesolutions.com" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Junior Game Developer @ Arrise Solutions (India) Pvt. Ltd. </a> </strong><br>
-<span style="font-style:italic; color:var(--muted-2)">July 2024 - June 2025</span><br>
-- Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company’s gaming platform.</p>
-</section>
-<section id="research-interests" class="level2">
-<h2 data-anchor-id="research-interests">Research Interests</h2>
+<section id="gyroscope" class="level3">
+<h3 class="anchored" data-anchor-id="gyroscope">Gyroscope</h3>
+<p>The gyroscope measures angular velocity, which tells how fast the sensor is rotating around each axis.</p>
+<p>Example outputs:</p>
 <ul>
-<li>mm-Wave Sensing</li>
-<li>Ubiquitous Computing</li>
-<li>Human-Computer Interaction (HCI)</li>
-<li>Machine Learning</li>
+<li>rotation around x axis</li>
+<li>rotation around y axis</li>
+<li>rotation around z axis</li>
 </ul>
+<p>Gyroscope data is useful for tracking rotation, but over time it tends to drift if used alone.</p>
+</section>
+<section id="magnetometer" class="level3">
+<h3 class="anchored" data-anchor-id="magnetometer">Magnetometer</h3>
+<p>A magnetometer measures the surrounding magnetic field. It is commonly used as a digital compass to estimate heading relative to Earth’s magnetic field.</p>
+<p>However, magnetometer readings are often noisy and can be affected by nearby metal objects or electronics.</p>
+</section>
+</section>
+<section id="what-kind-of-data-does-an-imu-generate" class="level2">
+<h2 class="anchored" data-anchor-id="what-kind-of-data-does-an-imu-generate">What kind of data does an IMU generate</h2>
+<p>An IMU usually outputs time series data. At each timestamp, it provides values like:</p>
+<ul>
+<li><code>ax, ay, az</code> for acceleration</li>
+<li><code>gx, gy, gz</code> for angular velocity</li>
+<li><code>mx, my, mz</code> for magnetic field, if available</li>
+</ul>
+<p>A sample data row may look like:</p>
+<p>```text timestamp, ax, ay, az, gx, gy, gz 0.01, 0.12, -0.03, 9.78, 0.01, 0.02, -0.01</p>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f4ee;
+  --text: #1e1e1e;
+  --muted: #4a4a4a;
+  --muted-2: #767676;
+  --link: #1b45c7;
+  --link-hover: #1238a5;
+  --accent-blue: #2a52be;
+  --accent-green: #2f8f4a;
+  --accent-red: #a01822;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}

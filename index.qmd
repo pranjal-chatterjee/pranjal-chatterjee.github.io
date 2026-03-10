@@ -20,185 +20,6 @@ about:
       href: https://twitter.com/PranjalChatter1
 ---
 
-```{=html}
-<style>
-:root {
-  color-scheme: light;
-  --bg: #f7f4ee;
-  --text: #1e1e1e;
-  --muted: #4a4a4a;
-  --muted-2: #767676;
-  --link: #1b45c7;
-  --link-hover: #1238a5;
-  --accent-blue: #2a52be;
-  --accent-green: #2f8f4a;
-  --accent-red: #a01822;
-  --toggle-bg: #e5e0d6;
-  --toggle-border: #c9c4b7;
-  --toggle-knob: #ffffff;
-  --toggle-shadow: rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #111418;
-  --text: #f0f0f0;
-  --muted: #c0c0c0;
-  --muted-2: #9a9a9a;
-  --link: #8cb4ff;
-  --link-hover: #b3cdff;
-  --accent-blue: #9db7ff;
-  --accent-green: #7fd49a;
-  --accent-red: #ff8f99;
-  --toggle-bg: #2a2f36;
-  --toggle-border: #3a414b;
-  --toggle-knob: #f0f0f0;
-  --toggle-shadow: rgba(0, 0, 0, 0.4);
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-a {
-  color: var(--link);
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--toggle-border);
-  background: var(--bg);
-  color: var(--muted);
-  font-size: 0.85rem;
-  box-shadow: 0 10px 24px var(--toggle-shadow);
-  z-index: 999;
-}
-
-.theme-toggle__label {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.theme-toggle__switch {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.theme-toggle__switch input {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-}
-
-.theme-toggle__track {
-  width: 46px;
-  height: 24px;
-  padding: 2px;
-  border-radius: 999px;
-  background: var(--toggle-bg);
-  border: 1px solid var(--toggle-border);
-  display: inline-flex;
-  align-items: center;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.theme-toggle__knob {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--toggle-knob);
-  box-shadow: 0 2px 6px var(--toggle-shadow);
-  transform: translateX(0);
-  transition: transform 0.2s ease;
-}
-
-#theme-toggle:checked + .theme-toggle__track .theme-toggle__knob {
-  transform: translateX(22px);
-}
-
-@media (max-width: 640px) {
-  .theme-toggle {
-    top: auto;
-    bottom: 1rem;
-    right: 1rem;
-  }
-}
-
-.about-links .about-link {
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-}
-
-[data-theme="dark"] .about-links .about-link {
-  color: #f5f7ff !important;
-  border-color: #5b6675 !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-[data-theme="dark"] .about-links .about-link i,
-[data-theme="dark"] .about-links .about-link svg,
-[data-theme="dark"] .about-links .about-link span {
-  color: #f5f7ff !important;
-  fill: currentColor !important;
-}
-
-[data-theme="dark"] .about-links .about-link:hover {
-  color: #ffffff !important;
-  border-color: #8cb4ff !important;
-  background: rgba(140, 180, 255, 0.12) !important;
-}
-</style>
-
-<div class="theme-toggle" aria-label="Theme toggle">
-  <span class="theme-toggle__label">Light</span>
-  <label class="theme-toggle__switch" for="theme-toggle">
-    <input id="theme-toggle" type="checkbox" aria-label="Toggle dark mode">
-    <span class="theme-toggle__track">
-      <span class="theme-toggle__knob"></span>
-    </span>
-  </label>
-  <span class="theme-toggle__label">Dark</span>
-</div>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var toggle = document.getElementById("theme-toggle");
-  if (!toggle) {
-    return;
-  }
-
-  var stored = localStorage.getItem("theme");
-  var prefersDark = window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  var isDark = stored ? stored === "dark" : prefersDark;
-
-  root.dataset.theme = isDark ? "dark" : "light";
-  toggle.checked = isDark;
-
-  toggle.addEventListener("change", function () {
-    var nextTheme = toggle.checked ? "dark" : "light";
-    root.dataset.theme = nextTheme;
-    localStorage.setItem("theme", nextTheme);
-  });
-})();
-</script>
-```
-
 :::{#hero-heading}
 # **Pranjal Chatterjee**
 Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
@@ -207,7 +28,7 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
 
 ## Education
 
-- <strong style="color:var(--accent-blue)">PhD in Computer SCience & Engineering</strong>  
+- <strong style="color:var(--accent-blue)">PhD in Computer Science & Engineering</strong>  
   <a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Technology, Kharagpur</a>  
   <span style="font-style:italic; color:var(--muted-2)">Jan 2026 - Present</span><br>
 
@@ -221,11 +42,8 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
   <span style="font-style:italic; color:var(--muted-2)">Sept 2018 - June 2022</span><br>
   <span style="color:var(--muted)">CGPA: <strong>9.46</strong></span>
 
-
-
 ## Work Experience
 
-<!-- Junior Research Fellow @ IIT Kharagpur -->
 <strong style="color:var(--accent-green)">
   <a href="https://www.iitkgp.ac.in" target="_blank" style="color:var(--accent-green); text-decoration:none;">
     Junior Research Fellow @ IIT Kharagpur
@@ -234,18 +52,17 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
 <span style="font-style:italic; color:var(--muted-2)">July 2025 - Dec 2026</span>  
 - Worked on a DST funded project called "mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing".
 
-<!-- Jr. Game Developer @ Arrise Solutions -->
 <strong style="color:var(--accent-green)">
   <a href="https://www.arrisesolutions.com" target="_blank" style="color:var(--accent-green); text-decoration:none;">
-    Jr. Game Developer @ Arrise Solutions(India) Pvt. Ltd.
+    Junior Game Developer @ Arrise Solutions (India) Pvt. Ltd.
   </a>
 </strong>  
 <span style="font-style:italic; color:var(--muted-2)">July 2024 - June 2025</span>  
 - Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company's gaming platform.
 
-
 ## Research Interests
+
 - mm-Wave Sensing
-- Ubiquitous computing
-- Human-computer interaction(HCI)
+- Ubiquitous Computing
+- Human-Computer Interaction (HCI)
 - Machine Learning

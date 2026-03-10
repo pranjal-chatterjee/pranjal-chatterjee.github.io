@@ -3,9 +3,18 @@ project:
   output-dir: docs
 
 website:
-  # title: "My Site"
+  title: "Pranjal Chatterjee"
+  search: false
   navbar:
     left:
       - href: index.qmd
-        # text: Home
+        text: Home
       - href: blog.qmd
+        text: Blog
+
+format:
+  html:
+    css: assets/theme.css
+    highlight-style: github
+    code-copy: true
+    code-line-numbers: true

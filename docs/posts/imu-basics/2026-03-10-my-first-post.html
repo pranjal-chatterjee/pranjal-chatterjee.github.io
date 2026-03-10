@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Pranjal Chatterjee">
+<meta name="dcterms.date" content="2026-03-10">
+<meta name="description" content="An introduction to IMU sensors, how they work, and how to collect and process their data.">
 
-<title>Pranjal Chatterjee</title>
+<title>IMU Sensors: Data Collection and Processing – Pranjal Chatterjee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,21 +23,57 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-991b1886d3c685c7aa2b62b80640c7af.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a44042140fa0857d845a83708dc474a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="../../assets/theme.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -62,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Pranjal Chatterjee</span>
     </a>
   </div>
@@ -72,11 +111,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -92,76 +131,240 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="pranjal.jpg" class="about-image
-  rectangle " style="width: 18em;">
-<header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"><strong>Pranjal Chatterjee</strong></h1></header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/pranjalchatterjee/" class="about-link" rel="" target="">
-    <i class="bi bi-fab fa-linkedin-in"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/pranjal-chatterjee" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="mailto:chatpranjal@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-fas fa-envelope"></i>
-     <span class="about-link-text">Gmail</span>
-  </a>
-  <a href="https://twitter.com/PranjalChatter1" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IMU Sensors: Data Collection and Processing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Basics</div>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<div id="hero-heading">
-<section id="pranjal-chatterjee" class="level1">
-<p>Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the <a href="https://ubinet-iitkgp.github.io/ubinet/"><strong>Ubiquitous Networked Systems Lab (UbiNet)</strong></a>, IIT Kharagpur, West Bengal, under the guidance of <a href="https://sandipc-iitkgp.github.io/sandip-web/"><strong>Prof.&nbsp;Sandip Chakraborty</strong></a>. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.</p>
-</section>
+  </div>
+
+<div>
+  <div class="description">
+    An introduction to IMU sensors, how they work, and how to collect and process their data.
+  </div>
 </div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pranjal Chatterjee </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>IMU sensors are widely used in robotics, wearables, smartphones, drones, and many embedded systems to measure motion and orientation. IMU stands for <strong>Inertial Measurement Unit</strong>, and it typically combines multiple sensors such as an accelerometer and a gyroscope, and sometimes a magnetometer.</p>
+<p>In this post, I will cover the basic idea of IMU sensors, what kind of data they produce, and how that data can be collected and processed for practical use.</p>
+<section id="what-is-an-imu-sensor" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-imu-sensor">What is an IMU sensor</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>An IMU is a sensor module that measures the motion of an object in space. Depending on the sensor, it may provide:</p>
+<ul>
+<li>acceleration along the x, y, and z axes<br>
+</li>
+<li>angular velocity around the x, y, and z axes<br>
+</li>
+<li>magnetic field values along the x, y, and z axes</li>
+</ul>
+<p>Based on the number of sensing components, IMUs are often described as:</p>
+<ul>
+<li><strong>6-axis IMU</strong>(IMU-6050): accelerometer + gyroscope<br>
+</li>
+<li><strong>9-axis IMU</strong>(IMU-9250): accelerometer + gyroscope + magnetometer</li>
+</ul>
+<p>These measurements help estimate movement, tilt, rotation, and orientation.</p>
+</div><div class="column" style="width:45%;">
+<p><img src="imu_axes.png" class="img-fluid"></p>
+<p><em>Typical IMU coordinate frame showing accelerometer and gyroscope axes.</em></p>
+</div>
+</div>
+</section>
+<section id="main-components-of-an-imu" class="level2">
+<h2 class="anchored" data-anchor-id="main-components-of-an-imu">Main components of an IMU</h2>
+<section id="accelerometer" class="level3">
+<h3 class="anchored" data-anchor-id="accelerometer">Accelerometer</h3>
+<p>The accelerometer measures linear acceleration along three axes. It detects both motion based acceleration and gravity. Because of this, it can also be used to estimate tilt when the sensor is stationary.</p>
+<p>Example outputs:</p>
+<ul>
+<li>acceleration in x direction</li>
+<li>acceleration in y direction</li>
+<li>acceleration in z direction</li>
+</ul>
+</section>
+<section id="gyroscope" class="level3">
+<h3 class="anchored" data-anchor-id="gyroscope">Gyroscope</h3>
+<p>The gyroscope measures angular velocity, which tells how fast the sensor is rotating around each axis.</p>
+<p>Example outputs:</p>
+<ul>
+<li>rotation around x axis</li>
+<li>rotation around y axis</li>
+<li>rotation around z axis</li>
+</ul>
+<p>Gyroscope data is useful for tracking rotation, but over time it tends to drift if used alone.</p>
+</section>
+<section id="magnetometer" class="level3">
+<h3 class="anchored" data-anchor-id="magnetometer">Magnetometer</h3>
+<p>A magnetometer measures the surrounding magnetic field. It is commonly used as a digital compass to estimate heading relative to Earth’s magnetic field.</p>
+<p>However, magnetometer readings are often noisy and can be affected by nearby metal objects or electronics.</p>
+</section>
+</section>
+<section id="what-kind-of-data-does-an-imu-generate" class="level2">
+<h2 class="anchored" data-anchor-id="what-kind-of-data-does-an-imu-generate">What kind of data does an IMU generate</h2>
+<p>An IMU usually outputs time series data. At each timestamp, it provides values like:</p>
+<ul>
+<li><code>ax, ay, az</code> for acceleration</li>
+<li><code>gx, gy, gz</code> for angular velocity</li>
+<li><code>mx, my, mz</code> for magnetic field, if available</li>
+</ul>
+<p>A sample data row may look like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>timestamp, ax, ay, az, gx, gy, gz</span>
+<span id="cb1-2"><a href="#cb1-2"></a>0.01, 0.12, -0.03, 9.78, 0.01, 0.02, -0.01</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setup-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="setup-configuration">Setup Configuration</h2>
+<p>To connect the <strong>MPU6050 IMU sensor with Raspberry Pi 3</strong>, communication is done using the <strong>I2C interface</strong>.</p>
+<section id="wiring" class="level3">
+<h3 class="anchored" data-anchor-id="wiring">Wiring</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>MPU6050 Pin</th>
+<th>Raspberry Pi 3 Pin</th>
+<th>GPIO Function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VCC</td>
+<td>Pin 1</td>
+<td>3.3V</td>
+</tr>
+<tr class="even">
+<td>GND</td>
+<td>Pin 6</td>
+<td>GND</td>
+</tr>
+<tr class="odd">
+<td>SDA</td>
+<td>Pin 3</td>
+<td>GPIO2 / SDA</td>
+</tr>
+<tr class="even">
+<td>SCL</td>
+<td>Pin 5</td>
+<td>GPIO3 / SCL</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optional-pins" class="level3">
+<h3 class="anchored" data-anchor-id="optional-pins">Optional Pins</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>MPU6050 Pin</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>XDA</td>
+<td>Leave unconnected</td>
+</tr>
+<tr class="even">
+<td>XCL</td>
+<td>Leave unconnected</td>
+</tr>
+<tr class="odd">
+<td>AD0</td>
+<td>GND → <code>0x68</code>, 3.3V → <code>0x69</code></td>
+</tr>
+<tr class="even">
+<td>INT</td>
+<td>Optional interrupt pin</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<p>Use <strong>3.3V</strong>, not <strong>5V</strong>, to avoid damaging the Raspberry Pi.</p>
 <hr>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<ul>
-<li><p><strong style="color:var(--accent-blue)">PhD in Computer Science &amp; Engineering</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Technology, Kharagpur</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Jan 2026 - Present</span><br></p></li>
-<li><p><strong style="color:var(--accent-blue)">M.Tech in Information Technology</strong><br>
-<a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Engineering Science and Technology (IIEST), Shibpur</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Aug 2022 - June 2024</span><br> <span style="color:var(--muted)">CGPA: <strong>9.43</strong> &nbsp;|&nbsp; <em style="color:var(--accent-red)">Silver Medalist</em></span></p></li>
-<li><p><strong style="color:var(--accent-blue)">B.Tech in Computer Science and Engineering</strong><br>
-<a href="https://www.makautexam.net/" style="color:var(--muted)">Maulana Abul Kalam Azad University of Technology (India)</a><br>
-<span style="font-style:italic; color:var(--muted-2)">Sept 2018 - June 2022</span><br> <span style="color:var(--muted)">CGPA: <strong>9.46</strong></span></p></li>
-</ul>
 </section>
-<section id="work-experience" class="level2">
-<h2 data-anchor-id="work-experience">Work Experience</h2>
-<p><strong style="color:var(--accent-green)"> <a href="https://www.iitkgp.ac.in" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Junior Research Fellow @ IIT Kharagpur </a> </strong><br>
-<span style="font-style:italic; color:var(--muted-2)">July 2025 - Dec 2026</span><br>
-- Worked on a DST funded project called “mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing”.</p>
-<p><strong style="color:var(--accent-green)"> <a href="https://www.arrisesolutions.com" target="_blank" style="color:var(--accent-green); text-decoration:none;"> Junior Game Developer @ Arrise Solutions (India) Pvt. Ltd. </a> </strong><br>
-<span style="font-style:italic; color:var(--muted-2)">July 2024 - June 2025</span><br>
-- Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company’s gaming platform.</p>
 </section>
-<section id="research-interests" class="level2">
-<h2 data-anchor-id="research-interests">Research Interests</h2>
-<ul>
-<li>mm-Wave Sensing</li>
-<li>Ubiquitous Computing</li>
-<li>Human-Computer Interaction (HCI)</li>
-<li>Machine Learning</li>
-</ul>
+<section id="data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
+<p>The following Python script reads accelerometer and gyroscope data from an <strong>MPU6050 IMU sensor</strong> and stores the readings in a CSV file.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> mpu6050 <span class="im">import</span> mpu6050</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> time</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> csv</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>s <span class="op">=</span> mpu6050(<span class="bn">0x68</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a>filename <span class="op">=</span> <span class="st">"imu_data.csv"</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="cf">with</span> <span class="bu">open</span>(filename, mode<span class="op">=</span><span class="st">"w"</span>, newline<span class="op">=</span><span class="st">""</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    writer.writerow([</span>
+<span id="cb2-11"><a href="#cb2-11"></a>        <span class="st">"timestamp"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12"></a>        <span class="st">"accel_x"</span>, <span class="st">"accel_y"</span>, <span class="st">"accel_z"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13"></a>        <span class="st">"gyro_x"</span>, <span class="st">"gyro_y"</span>, <span class="st">"gyro_z"</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>    ])</span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a>    <span class="cf">try</span>:</span>
+<span id="cb2-17"><a href="#cb2-17"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-18"><a href="#cb2-18"></a>            ac <span class="op">=</span> s.get_accel_data()</span>
+<span id="cb2-19"><a href="#cb2-19"></a>            gr <span class="op">=</span> s.get_gyro_data()</span>
+<span id="cb2-20"><a href="#cb2-20"></a>            ts <span class="op">=</span> time.time()</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a>            writer.writerow([</span>
+<span id="cb2-23"><a href="#cb2-23"></a>                ts,</span>
+<span id="cb2-24"><a href="#cb2-24"></a>                ac[<span class="st">'x'</span>], ac[<span class="st">'y'</span>], ac[<span class="st">'z'</span>],</span>
+<span id="cb2-25"><a href="#cb2-25"></a>                gr[<span class="st">'x'</span>], gr[<span class="st">'y'</span>], gr[<span class="st">'z'</span>]</span>
+<span id="cb2-26"><a href="#cb2-26"></a>            ])</span>
+<span id="cb2-27"><a href="#cb2-27"></a>            <span class="bu">file</span>.flush()</span>
+<span id="cb2-28"><a href="#cb2-28"></a></span>
+<span id="cb2-29"><a href="#cb2-29"></a>            <span class="bu">print</span>(<span class="ss">f"Accel: x=</span><span class="sc">{</span>ac[<span class="st">'x'</span>]<span class="sc">:.2f}</span><span class="ss">, y=</span><span class="sc">{</span>ac[<span class="st">'y'</span>]<span class="sc">:.2f}</span><span class="ss">, z=</span><span class="sc">{</span>ac[<span class="st">'z'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-30"><a href="#cb2-30"></a>            <span class="bu">print</span>(<span class="ss">f"Gyro : x=</span><span class="sc">{</span>gr[<span class="st">'x'</span>]<span class="sc">:.2f}</span><span class="ss">, y=</span><span class="sc">{</span>gr[<span class="st">'y'</span>]<span class="sc">:.2f}</span><span class="ss">, z=</span><span class="sc">{</span>gr[<span class="st">'z'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31"></a>            <span class="bu">print</span>(<span class="st">"."</span> <span class="op">*</span> <span class="dv">30</span>)</span>
+<span id="cb2-32"><a href="#cb2-32"></a></span>
+<span id="cb2-33"><a href="#cb2-33"></a>            time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb2-34"><a href="#cb2-34"></a></span>
+<span id="cb2-35"><a href="#cb2-35"></a>    <span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
+<span id="cb2-36"><a href="#cb2-36"></a>        <span class="bu">print</span>(<span class="st">"Stopped by user"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
