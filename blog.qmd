@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Blogs"
 listing: 
   contents: posts 
   type: default 
@@ -8,5 +8,3 @@ listing:
   categories: true
 page-layout: full
 ---
-
-Technical notes, project updates, and publication-style summaries.

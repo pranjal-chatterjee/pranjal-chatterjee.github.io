@@ -44,3 +44,21 @@ a:hover {
 .navbar .nav-link.active {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  main.content .columns {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  main.content .columns > .column {
+    width: 100% !important;
+  }
+
+  main.content .columns img {
+    display: block;
+    margin: 0 auto;
+    max-width: min(85vw, 420px);
+    height: auto;
+  }
+}

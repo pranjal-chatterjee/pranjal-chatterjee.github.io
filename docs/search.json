@@ -44,16 +44,16 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Publications",
+    "title": "Blogs",
     "section": "",
-    "text": "Technical notes, project updates, and publication-style summaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIMU Sensors: Data Collection and Processing\n\n\n\nBasics\n\n\n\nAn introduction to IMU sensors, how they work, and how to collect and process their data.\n\n\n\n\n\nMar 10, 2026\n\n\nPranjal Chatterjee\n\n\n\n\n\nNo matching items"
+    "text": "IMU Sensors: Data Collection and Processing\n\n\n\nBasics\n\n\n\nAn introduction to IMU sensors, how they work, and how to collect and process their data.\n\n\n\n\n\nMar 10, 2026\n\n\nPranjal Chatterjee\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pranjal Chatterjee",
     "section": "",
-    "text": "Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the Ubiquitous Networked Systems Lab (UbiNet), IIT Kharagpur, West Bengal, under the guidance of Prof. Sandip Chakraborty. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning."
+    "text": "Hello, I’m Pranjal, currently a PhD Scholar in Computer Science and Engineering at the Ubiquitous Networked Systems Lab (UbiNet), IIT Kharagpur, West Bengal, under the guidance of Prof. Sandip Chakraborty. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning."
   },
   {
     "objectID": "index.html#background",
