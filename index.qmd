@@ -138,6 +138,29 @@ a:hover {
     right: 1rem;
   }
 }
+
+.about-links .about-link {
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+[data-theme="dark"] .about-links .about-link {
+  color: #f5f7ff !important;
+  border-color: #5b6675 !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+[data-theme="dark"] .about-links .about-link i,
+[data-theme="dark"] .about-links .about-link svg,
+[data-theme="dark"] .about-links .about-link span {
+  color: #f5f7ff !important;
+  fill: currentColor !important;
+}
+
+[data-theme="dark"] .about-links .about-link:hover {
+  color: #ffffff !important;
+  border-color: #8cb4ff !important;
+  background: rgba(140, 180, 255, 0.12) !important;
+}
 </style>
 
 <div class="theme-toggle" aria-label="Theme toggle">
@@ -177,7 +200,7 @@ a:hover {
 ```
 
 :::{#hero-heading}
-# **Panjal Chatterjee**
+# **Pranjal Chatterjee**
 Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the [**Ubiquitous Networked Systems Lab (UbiNet)**](https://ubinet-iitkgp.github.io/ubinet/), IIT Kharagpur, West Bengal, under the guidance of [**Prof. Sandip Chakraborty**](https://sandipc-iitkgp.github.io/sandip-web/). My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning.
 :::
 ---
