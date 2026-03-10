@@ -1,96 +1,5 @@
 [
   {
-    "objectID": "posts/2026-03-10-my-first-post.html",
-    "href": "posts/2026-03-10-my-first-post.html",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "",
-    "text": "IMU sensors are widely used in robotics, wearables, smartphones, drones, and many embedded systems to measure motion and orientation. IMU stands for Inertial Measurement Unit, and it typically combines multiple sensors such as an accelerometer and a gyroscope, and sometimes a magnetometer.\nIn this post, I will cover the basic idea of IMU sensors, what kind of data they produce, and how that data can be collected and processed for practical use."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Technical notes, project updates, and publication-style summaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIMU Sensors: Data Collection and Processing\n\n\n\nBasics\n\n\n\nAn introduction to IMU sensors, how they work, and how to collect and process their data.\n\n\n\n\n\nMar 10, 2026\n\n\nPranjal Chatterjee\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Pranjal Chatterjee",
-    "section": "",
-    "text": "Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the Ubiquitous Networked Systems Lab (UbiNet), IIT Kharagpur, West Bengal, under the guidance of Prof. Sandip Chakraborty. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Pranjal Chatterjee",
-    "section": "Education",
-    "text": "Education\n\nPhD in Computer Science & Engineering\nIndian Institute of Technology, Kharagpur\nJan 2026 - Present\nM.Tech in Information Technology\nIndian Institute of Engineering Science and Technology (IIEST), Shibpur\nAug 2022 - June 2024 CGPA: 9.43  |  Silver Medalist\nB.Tech in Computer Science and Engineering\nMaulana Abul Kalam Azad University of Technology (India)\nSept 2018 - June 2022 CGPA: 9.46"
-  },
-  {
-    "objectID": "index.html#work-experience",
-    "href": "index.html#work-experience",
-    "title": "Pranjal Chatterjee",
-    "section": "Work Experience",
-    "text": "Work Experience\n  Junior Research Fellow @ IIT Kharagpur  \nJuly 2025 - Dec 2026\n- Worked on a DST funded project called “mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing”.\n  Junior Game Developer @ Arrise Solutions (India) Pvt. Ltd.  \nJuly 2024 - June 2025\n- Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company’s gaming platform."
-  },
-  {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "Pranjal Chatterjee",
-    "section": "Research Interests",
-    "text": "Research Interests\n\nmm-Wave Sensing\nUbiquitous Computing\nHuman-Computer Interaction (HCI)\nMachine Learning"
-  },
-  {
-    "objectID": "posts/2026-03-10-my-first-post.html#what-is-an-imu-sensor",
-    "href": "posts/2026-03-10-my-first-post.html#what-is-an-imu-sensor",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "What is an IMU sensor",
-    "text": "What is an IMU sensor\nAn IMU is a sensor module that measures the motion of an object in space. Depending on the sensor, it may provide:\n\nAcceleration along the x, y, and z axes\nAngular velocity around the x, y, and z axes\nMagnetic field values along the x, y, and z axes\n\nBased on the number of sensing components, IMUs are often described as:\n\n6 axis IMU(MPU-6050): accelerometer + gyroscope\n9 axis IMU(MPU-9250): accelerometer + gyroscope + magnetometer\n\nThese measurements help estimate movement, tilt, rotation, and orientation."
-  },
-  {
-    "objectID": "posts/2026-03-10-my-first-post.html#main-components-of-an-imu",
-    "href": "posts/2026-03-10-my-first-post.html#main-components-of-an-imu",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "Main components of an IMU",
-    "text": "Main components of an IMU\n\nAccelerometer\nThe accelerometer measures linear acceleration along three axes. It detects both motion based acceleration and gravity. Because of this, it can also be used to estimate tilt when the sensor is stationary.\nExample outputs:\n\nacceleration in x direction\nacceleration in y direction\nacceleration in z direction\n\n\n\nGyroscope\nThe gyroscope measures angular velocity, which tells how fast the sensor is rotating around each axis.\nExample outputs:\n\nrotation around x axis\nrotation around y axis\nrotation around z axis\n\nGyroscope data is useful for tracking rotation, but over time it tends to drift if used alone.\n\n\nMagnetometer\nA magnetometer measures the surrounding magnetic field. It is commonly used as a digital compass to estimate heading relative to Earth’s magnetic field.\nHowever, magnetometer readings are often noisy and can be affected by nearby metal objects or electronics."
-  },
-  {
-    "objectID": "posts/2026-03-10-my-first-post.html#what-kind-of-data-does-an-imu-generate",
-    "href": "posts/2026-03-10-my-first-post.html#what-kind-of-data-does-an-imu-generate",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "What kind of data does an IMU generate",
-    "text": "What kind of data does an IMU generate\nAn IMU usually outputs time series data. At each timestamp, it provides values like:\n\nax, ay, az for acceleration\ngx, gy, gz for angular velocity\nmx, my, mz for magnetic field, if available\n\nA sample data row may look like:\n```text timestamp, ax, ay, az, gx, gy, gz 0.01, 0.12, -0.03, 9.78, 0.01, 0.02, -0.01"
-  },
-  {
-    "objectID": "posts/imu_basics/2026-03-10-my-first-post.html",
-    "href": "posts/imu_basics/2026-03-10-my-first-post.html",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "",
-    "text": "IMU sensors are widely used in robotics, wearables, smartphones, drones, and many embedded systems to measure motion and orientation. IMU stands for Inertial Measurement Unit, and it typically combines multiple sensors such as an accelerometer and a gyroscope, and sometimes a magnetometer.\nIn this post, I will cover the basic idea of IMU sensors, what kind of data they produce, and how that data can be collected and processed for practical use."
-  },
-  {
-    "objectID": "posts/imu_basics/2026-03-10-my-first-post.html#what-is-an-imu-sensor",
-    "href": "posts/imu_basics/2026-03-10-my-first-post.html#what-is-an-imu-sensor",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "What is an IMU sensor",
-    "text": "What is an IMU sensor\n\n\nAn IMU is a sensor module that measures the motion of an object in space. Depending on the sensor, it may provide:\n\nacceleration along the x, y, and z axes\n\nangular velocity around the x, y, and z axes\n\nmagnetic field values along the x, y, and z axes\n\nBased on the number of sensing components, IMUs are often described as:\n\n6-axis IMU: accelerometer + gyroscope\n\n9-axis IMU: accelerometer + gyroscope + magnetometer\n\nThese measurements help estimate movement, tilt, rotation, and orientation.\n\n\nTypical IMU coordinate frame showing accelerometer and gyroscope axes."
-  },
-  {
-    "objectID": "posts/imu_basics/2026-03-10-my-first-post.html#main-components-of-an-imu",
-    "href": "posts/imu_basics/2026-03-10-my-first-post.html#main-components-of-an-imu",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "Main components of an IMU",
-    "text": "Main components of an IMU\n\nAccelerometer\nThe accelerometer measures linear acceleration along three axes. It detects both motion based acceleration and gravity. Because of this, it can also be used to estimate tilt when the sensor is stationary.\nExample outputs:\n\nacceleration in x direction\nacceleration in y direction\nacceleration in z direction\n\n\n\nGyroscope\nThe gyroscope measures angular velocity, which tells how fast the sensor is rotating around each axis.\nExample outputs:\n\nrotation around x axis\nrotation around y axis\nrotation around z axis\n\nGyroscope data is useful for tracking rotation, but over time it tends to drift if used alone.\n\n\nMagnetometer\nA magnetometer measures the surrounding magnetic field. It is commonly used as a digital compass to estimate heading relative to Earth’s magnetic field.\nHowever, magnetometer readings are often noisy and can be affected by nearby metal objects or electronics."
-  },
-  {
-    "objectID": "posts/imu_basics/2026-03-10-my-first-post.html#what-kind-of-data-does-an-imu-generate",
-    "href": "posts/imu_basics/2026-03-10-my-first-post.html#what-kind-of-data-does-an-imu-generate",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "What kind of data does an IMU generate",
-    "text": "What kind of data does an IMU generate\nAn IMU usually outputs time series data. At each timestamp, it provides values like:\n\nax, ay, az for acceleration\ngx, gy, gz for angular velocity\nmx, my, mz for magnetic field, if available\n\nA sample data row may look like:\n```text timestamp, ax, ay, az, gx, gy, gz 0.01, 0.12, -0.03, 9.78, 0.01, 0.02, -0.01"
-  },
-  {
     "objectID": "posts/imu-basics/2026-03-10-my-first-post.html",
     "href": "posts/imu-basics/2026-03-10-my-first-post.html",
     "title": "IMU Sensors: Data Collection and Processing",
@@ -119,13 +28,6 @@
     "text": "What kind of data does an IMU generate\nAn IMU usually outputs time series data. At each timestamp, it provides values like:\n\nax, ay, az for acceleration\ngx, gy, gz for angular velocity\nmx, my, mz for magnetic field, if available\n\nA sample data row may look like:\ntimestamp, ax, ay, az, gx, gy, gz\n0.01, 0.12, -0.03, 9.78, 0.01, 0.02, -0.01"
   },
   {
-    "objectID": "posts/imu-basics/2026-03-10-my-first-post.html#example-collecting-imu-data-with-python",
-    "href": "posts/imu-basics/2026-03-10-my-first-post.html#example-collecting-imu-data-with-python",
-    "title": "IMU Sensors: Data Collection and Processing",
-    "section": "Example: Collecting IMU Data with Python",
-    "text": "Example: Collecting IMU Data with Python\n\n\n\n\n\n\nIMU Data Logging Script\n\n\n\n\n\n\n\n\n\nIMU Data Collection Script (MPU6050 + Raspberry Pi)\n\n\n\nThe following Python script reads accelerometer and gyroscope data from an MPU6050 IMU sensor and saves the readings to a CSV file.\n```{.python code-line-numbers=“true”} from mpu6050 import mpu6050 import time import csv\ns = mpu6050(0x68) filename = “imu_data.csv”\nwith open(filename, mode=“w”, newline=““) as file: writer = csv.writer(file) writer.writerow([ “timestamp”, “accel_x”, “accel_y”, “accel_z”, “gyro_x”, “gyro_y”, “gyro_z” ])\ntry:\n    while True:\n        ac = s.get_accel_data()\n        gr = s.get_gyro_data()\n        ts = time.time()\n\n        writer.writerow([\n            ts,\n            ac['x'], ac['y'], ac['z'],\n            gr['x'], gr['y'], gr['z']\n        ])\n        file.flush()\n\n        print(f\"Accel: x={ac['x']:.2f}, y={ac['y']:.2f}, z={ac['z']:.2f}\")\n        print(f\"Gyro : x={gr['x']:.2f}, y={gr['y']:.2f}, z={gr['z']:.2f}\")\n        print(\".\" * 30)\n\n        time.sleep(0.5)\n\nexcept KeyboardInterrupt:\n    print(\"Stopped by user\")"
-  },
-  {
     "objectID": "posts/imu-basics/2026-03-10-my-first-post.html#setup-configuration",
     "href": "posts/imu-basics/2026-03-10-my-first-post.html#setup-configuration",
     "title": "IMU Sensors: Data Collection and Processing",
@@ -138,5 +40,33 @@
     "title": "IMU Sensors: Data Collection and Processing",
     "section": "Data Collection",
     "text": "Data Collection\nThe following Python script reads accelerometer and gyroscope data from an MPU6050 IMU sensor and stores the readings in a CSV file.\nfrom mpu6050 import mpu6050\nimport time\nimport csv\n\ns = mpu6050(0x68)\nfilename = \"imu_data.csv\"\n\nwith open(filename, mode=\"w\", newline=\"\") as file:\n    writer = csv.writer(file)\n    writer.writerow([\n        \"timestamp\",\n        \"accel_x\", \"accel_y\", \"accel_z\",\n        \"gyro_x\", \"gyro_y\", \"gyro_z\"\n    ])\n\n    try:\n        while True:\n            ac = s.get_accel_data()\n            gr = s.get_gyro_data()\n            ts = time.time()\n\n            writer.writerow([\n                ts,\n                ac['x'], ac['y'], ac['z'],\n                gr['x'], gr['y'], gr['z']\n            ])\n            file.flush()\n\n            print(f\"Accel: x={ac['x']:.2f}, y={ac['y']:.2f}, z={ac['z']:.2f}\")\n            print(f\"Gyro : x={gr['x']:.2f}, y={gr['y']:.2f}, z={gr['z']:.2f}\")\n            print(\".\" * 30)\n\n            time.sleep(0.5)\n\n    except KeyboardInterrupt:\n        print(\"Stopped by user\")"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Technical notes, project updates, and publication-style summaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIMU Sensors: Data Collection and Processing\n\n\n\nBasics\n\n\n\nAn introduction to IMU sensors, how they work, and how to collect and process their data.\n\n\n\n\n\nMar 10, 2026\n\n\nPranjal Chatterjee\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pranjal Chatterjee",
+    "section": "",
+    "text": "Hello, I’m Pranjal, currently a PhD Research Fellow in Computer Science and Engineering at the Ubiquitous Networked Systems Lab (UbiNet), IIT Kharagpur, West Bengal, under the guidance of Prof. Sandip Chakraborty. My research interests lie broadly in the fields of millimeter-wave sensing, FMCW radars, human-computer interaction (HCI), and Machine Learning."
+  },
+  {
+    "objectID": "index.html#background",
+    "href": "index.html#background",
+    "title": "Pranjal Chatterjee",
+    "section": "Background",
+    "text": "Background\n\nEducation\n\nPhD in Computer Science & Engineering\nIndian Institute of Technology, Kharagpur\nJan 2026 - Present\nM.Tech in Information Technology\nIndian Institute of Engineering Science and Technology (IIEST), Shibpur\nAug 2022 - June 2024 CGPA: 9.43  |  Silver Medalist\nB.Tech in Computer Science and Engineering\nMaulana Abul Kalam Azad University of Technology (India)\nSept 2018 - June 2022 CGPA: 9.46\n\n\n\nResearch Interests\n\nmm-Wave Sensing\nUbiquitous Computing\nHuman-Computer Interaction (HCI)\nMachine Learning"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Pranjal Chatterjee",
+    "section": "Experience",
+    "text": "Experience\n  Junior Research Fellow @ IIT Kharagpur  \nJuly 2025 - Dec 2026\n- Worked on a DST funded project called “mmMap : Indoor Multi-user Localization, Navigation and Mapping using mmWave Sensing”.\n  Junior Game Developer @ Arrise Solutions (India) Pvt. Ltd.  \nJuly 2024 - June 2025\n- Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company’s gaming platform."
   }
 ]

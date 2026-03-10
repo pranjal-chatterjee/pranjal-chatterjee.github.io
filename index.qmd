@@ -26,7 +26,9 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
 :::
 ---
 
-## Education
+## Background {#background}
+
+### Education
 
 - <strong style="color:var(--accent-blue)">PhD in Computer Science & Engineering</strong>  
   <a href="https://www.iiests.ac.in/" style="color:var(--muted)">Indian Institute of Technology, Kharagpur</a>  
@@ -42,7 +44,14 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
   <span style="font-style:italic; color:var(--muted-2)">Sept 2018 - June 2022</span><br>
   <span style="color:var(--muted)">CGPA: <strong>9.46</strong></span>
 
-## Work Experience
+### Research Interests
+
+- mm-Wave Sensing
+- Ubiquitous Computing
+- Human-Computer Interaction (HCI)
+- Machine Learning
+
+## Experience {#experience}
 
 <strong style="color:var(--accent-green)">
   <a href="https://www.iitkgp.ac.in" target="_blank" style="color:var(--accent-green); text-decoration:none;">
@@ -59,10 +68,3 @@ Hello, I'm Pranjal, currently a PhD Research Fellow in Computer Science and Engi
 </strong>  
 <span style="font-style:italic; color:var(--muted-2)">July 2024 - June 2025</span>  
 - Acquired hands-on experience in the gaming industry by designing, developing, and deploying custom light to medium-scale games tailored for the company's gaming platform.
-
-## Research Interests
-
-- mm-Wave Sensing
-- Ubiquitous Computing
-- Human-Computer Interaction (HCI)
-- Machine Learning

@@ -6,15 +6,19 @@ website:
   title: "Pranjal Chatterjee"
   search: false
   navbar:
+    pinned: true
     left:
-      - href: index.qmd
-        text: Home
+      - href: index.qmd#background
+        text: Background
+      - href: index.qmd#experience
+        text: Experience
       - href: blog.qmd
-        text: Blog
+        text: Blogs
 
 format:
   html:
     css: assets/theme.css
+    include-after-body: assets/scrollspy.js
     highlight-style: github
     code-copy: true
     code-line-numbers: true

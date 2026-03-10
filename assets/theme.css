@@ -23,3 +23,24 @@ a {
 a:hover {
   color: var(--link-hover);
 }
+
+#quarto-header.headroom--unpinned,
+#quarto-header.headroom--pinned {
+  transform: translateY(0) !important;
+}
+
+#background,
+#experience {
+  scroll-margin-top: 5.5rem;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  opacity: 1;
+}
